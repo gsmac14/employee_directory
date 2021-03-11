@@ -4,15 +4,17 @@ function Search(props) {
   return (
     <div className="input-group flex-nowrap">
       <input
-        value={props.search}
         onChange={props.handleInputChange}
-        name="first"
+        name="search"
         type="text"
         className="form-control"
-        placeholder="name"
+        placeholder="Search Employee"
         aria-label="Username"
         aria-describedby="addon-wrapping"
       />
+      <button onClick={props.hanleFormSubmit} className="btn btn-primary">
+        Search
+      </button>
     </div>
   );
 }

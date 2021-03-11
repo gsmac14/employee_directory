@@ -1,14 +1,13 @@
 import React from "react";
-import Search from "../Search";
+// import Search from "../Search";
 import Table from "../Table"
 
 function Card() {
     return (
         <div className="card">
         <div className="card-body">
-          <Search />
+          {/* <Search /> */}
           <Table />
-          This is some text within a card body.
         </div>
       </div>
     )
