@@ -1,7 +1,7 @@
 import React from "react"
 
-const Table = ({ results }) => {
-
+const Table = ({ results, filterResults }) => {
+const arrayData = filterResults.length > 0 ? filterResults : results;
   return(
 
 
@@ -16,8 +16,8 @@ const Table = ({ results }) => {
     </tr>
   </thead>
   <tbody>
-    { (results) ? results.map( (result, index) => {
-    console.log(result);
+    { (arrayData) ? arrayData.map( (result, index) => {
+
     return (
 
 

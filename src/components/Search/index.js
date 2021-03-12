@@ -1,10 +1,10 @@
 import React from "react";
 
-function Search(props) {
+function Search( filterResults ) {
   return (
     <div className="input-group flex-nowrap">
       <input
-        onChange={props.handleInputChange}
+        onChange={filterResults.handleSearch}
         name="search"
         type="text"
         className="form-control"
@@ -12,9 +12,6 @@ function Search(props) {
         aria-label="Username"
         aria-describedby="addon-wrapping"
       />
-      <button onClick={props.hanleFormSubmit} className="btn btn-primary">
-        Search
-      </button>
     </div>
   );
 }

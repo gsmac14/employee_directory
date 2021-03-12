@@ -8,9 +8,9 @@ import Table from "../components/Table";
 
 export default class Home extends Component{
     state = {
-        results: [{}],
+        results: [],
         order: "descend", 
-        filterResults: [{}],
+        filterResults: [],
     }
 
     componentDidMount() {
@@ -22,6 +22,7 @@ export default class Home extends Component{
 
     handleSearch = event => {
         const filter = event.target.value;
+        console.log(filter);
         const filteredList = this.state.results.filter(item =>{
             let values = Object.values(item)
             .join("")
@@ -76,6 +77,7 @@ export default class Home extends Component{
             <Search handleSearch={this.handleSearch}/>
             <Table handleSort={this.handleSort}
             results={this.state.results}
+            filterResults={this.state.filterResults}
             />
             </>
           )
