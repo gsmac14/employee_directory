@@ -17,13 +17,15 @@ const arrayData = filterResults.length > 0 ? filterResults : results;
   </thead>
   <tbody>
     { (arrayData) ? arrayData.map( (result, index) => {
+      const { first, last} = result.name;
+      const fullName = `${first} ${last}`;
 
     return (
 
 
     <tr key={ index }>
       <td> <img src={result.picture?.medium} alt={result.picture?.medium} /></td>
-      <td>{ result.name?.first }</td>
+      <td>{ fullName }</td>
       <td>{result.phone}</td>
       <td> {result.email} </td>
       <td> {result.location?.city} </td>
