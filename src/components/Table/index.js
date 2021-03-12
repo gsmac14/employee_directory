@@ -1,6 +1,6 @@
 import React from "react"
 
-function Table(props) {
+const Table = ({ results }) => {
 
   return(
 
@@ -8,30 +8,32 @@ function Table(props) {
 <table className="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Image</th>
+      <th scope="col">Name</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Email</th>
+      <th scope="col">Location</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>{}</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+    { (results) ? results.map( (result, index) => {
+    console.log(result);
+    return (
+
+
+    <tr key={ index }>
+      <td> <img src={result.picture?.medium} alt={result.picture?.medium} /></td>
+      <td>{ result.name?.first }</td>
+      <td>{result.phone}</td>
+      <td> {result.email} </td>
+      <td> {result.location?.city} </td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colSpan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    )
+    
+    
+    }): <tr></tr>}
+   
+
   </tbody>
 </table>
   )

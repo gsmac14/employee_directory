@@ -2,32 +2,34 @@ import React, { Component } from "react";
 import API from "../utils/API";
 import Header from "../components/Header";
 import Search from "../components/Search";
-import Card from "../components/Card";
+// import Card from "../components/Card";
 import Table from "../components/Table";
 
 
 export default class Home extends Component{
     state = {
-        name: [{}],
+        results: [{}],
         order: "descend", 
         filterResults: [{}],
     }
 
     componentDidMount() {
         API.getRandomUser()
-            .then(res => this.setState({name: res.data.results}))
+            .then(res => this.setState({results: res.data.results}))
             .catch(err => console.log(err));
+
         };
 
     handleSearch = event => {
         const filter = event.target.value;
-        const filteredList = this.state.name.filter(item =>{
+        const filteredList = this.state.results.filter(item =>{
             let values = Object.values(item)
             .join("")
             .toLowerCase()
             return values.indexOf(filter.toLowerCase()) !== -1;
         });
         this.setState({filterResults: filteredList});
+      
         };
 
     
@@ -64,7 +66,7 @@ export default class Home extends Component{
                     }
                 }
             }
-            const sortedUsers = this.state.name.sort(compareFunc);
+            const sortedUsers = this.state.results.sort(compareFunc);
             this.setState({filterResults: sortedUsers});
       }
       render(){
@@ -72,7 +74,9 @@ export default class Home extends Component{
             <>
             <Header />
             <Search handleSearch={this.handleSearch}/>
-            <Table handleSort={this.handleSort}/>
+            <Table handleSort={this.handleSort}
+            results={this.state.results}
+            />
             </>
           )
       }
