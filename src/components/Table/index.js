@@ -9,10 +9,10 @@ const arrayData = filterResults.length > 0 ? filterResults : results;
   <thead>
     <tr>
       <th scope="col">Image</th>
-      <th scope="col">Name</th>
-      <th scope="col">Phone</th>
-      <th scope="col">Email</th>
-      <th scope="col">Location</th>
+      <th style={{ cursor: "pointer" }} scope="col"> Name</th>
+      <th style={{ cursor: "pointer" }} scope="col">Phone</th>
+      <th style={{ cursor: "pointer" }} scope="col">Email</th>
+      <th style={{ cursor: "pointer" }} scope="col">Location</th>
     </tr>
   </thead>
   <tbody>
