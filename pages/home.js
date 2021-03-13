@@ -3,7 +3,7 @@ import API from "../utils/API";
 import Header from "../components/Header";
 import Search from "../components/Search";
 // import Card from "../components/Card";
-import Table from "../components/Rows";
+import Table from "../components/Table";
 
 export default class Home extends Component {
   state = {
