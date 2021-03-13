@@ -1,6 +1,6 @@
 import React from "react";
 
-function Search( filterResults ) {
+function Search(filterResults) {
   return (
     <div className="input-group flex-nowrap">
       <input
