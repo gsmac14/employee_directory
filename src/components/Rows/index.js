@@ -8,7 +8,7 @@ const Table = ({ results, filterResults }) => {
       <thead>
         <tr>
           <th scope="col">Image</th>
-          <th style={{ cursor: "pointer" }}  scope="col" >
+          <th style={{ cursor: "pointer" }} onClick={()=> results.handleSort("Name")} scope="col" >
             {" "}
             Name
           </th>
