@@ -1,6 +1,6 @@
 import React from "react";
 
-const Table = ({ results, filterResults }) => {
+const Table = ({ results, filterResults, handleSort }) => {
   const arrayData = filterResults.length > 0 ? filterResults : results;
 
   return (
@@ -8,17 +8,16 @@ const Table = ({ results, filterResults }) => {
       <thead>
         <tr>
           <th scope="col">Image</th>
-          <th style={{ cursor: "pointer" }} onClick={()=> results.handleSort("Name")} scope="col" >
-            {" "}
+          <th style={{ cursor: "pointer" }} onClick={()=> handleSort("name")} scope="col" >
             Name
           </th>
           <th style={{ cursor: "pointer" }} scope="col">
             Phone
           </th>
-          <th style={{ cursor: "pointer" }} scope="col">
+          <th style={{ cursor: "pointer" }} onClick={()=> handleSort("email")}   scope="col">
             Email
           </th>
-          <th style={{ cursor: "pointer" }} scope="col">
+          <th style={{ cursor: "pointer" }} onClick={()=> handleSort("location")} scope="col">
             Location
           </th>
         </tr>

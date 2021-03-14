@@ -34,7 +34,7 @@ export default class Home extends Component {
     } else {
       this.setState({ order: "descend" });
     }
-
+    console.log(event);
     const compareFunc = (a, b) => {
       if (this.state.order === "ascend") {
         if (a[event] === undefined) {
@@ -42,6 +42,10 @@ export default class Home extends Component {
         } else if (b[event] === undefined) {
           return -1;
         } else if (event === "name") {
+          return a[event].first.localeCompare(b[event].first);
+        } else if (event === "email") {
+          return a[event].first.localeCompare(b[event].first);
+        } else if (event === "location") {
           return a[event].first.localeCompare(b[event].first);
         } else {
           return a[event] - b[event];
@@ -58,7 +62,9 @@ export default class Home extends Component {
         }
       }
     };
+    console.log(this.state.results);
     const sortedUsers = this.state.results.sort(compareFunc);
+    console.log(sortedUsers);
     this.setState({ filterResults: sortedUsers });
   };
   render() {
@@ -75,4 +81,3 @@ export default class Home extends Component {
     );
   }
 }
-
