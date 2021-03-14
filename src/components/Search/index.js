@@ -1,4 +1,5 @@
 import React from "react";
+import "./style.css"
 
 function Search(filterResults) {
   return (
@@ -7,7 +8,7 @@ function Search(filterResults) {
         onChange={filterResults.handleSearch}
         name="search"
         type="text"
-        className="form-control"
+        className="form-control-sm"
         placeholder="Search Employee"
         aria-label="Username"
         aria-describedby="addon-wrapping"

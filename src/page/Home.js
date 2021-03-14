@@ -28,6 +28,8 @@ export default class Home extends Component {
     this.setState({ filterResults: filteredList });
   };
 
+  //sort function for handling descend and ascend by comparing 
+  
   handleSort = (event) => {
     if (this.state.order === "descend") {
       this.setState({ order: "ascend" });
