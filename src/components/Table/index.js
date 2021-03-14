@@ -4,7 +4,7 @@ const Table = ({ results, filterResults, handleSort }) => {
   const arrayData = filterResults.length > 0 ? filterResults : results;
 
   return (
-    <table className="table">
+    <table className="table table-striped">
       <thead>
         <tr>
           <th scope="col">Image</th>
