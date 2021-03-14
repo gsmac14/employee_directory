@@ -44,9 +44,7 @@ export default class Home extends Component {
         } else if (event === "name") {
           return a[event].first.localeCompare(b[event].first);
         } else if (event === "email") {
-          return a[event].first.localeCompare(b[event].first);
-        } else if (event === "location") {
-          return a[event].first.localeCompare(b[event].first);
+          return a[event].localeCompare(b[event]);
         } else {
           return a[event] - b[event];
         }
@@ -57,6 +55,8 @@ export default class Home extends Component {
           return -1;
         } else if (event === "name") {
           return b[event].first.localeCompare(a[event].first);
+        } else if (event === "email") {
+          return b[event].localeCompare(a[event]);
         } else {
           return b[event] - a[event];
         }

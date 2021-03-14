@@ -14,7 +14,7 @@ const Table = ({ results, filterResults, handleSort }) => {
           <th style={{ cursor: "pointer" }} scope="col">
             Phone
           </th>
-          <th style={{ cursor: "pointer" }} onClick={()=> handleSort("email")}   scope="col">
+          <th style={{ cursor: "pointer" }} onClick={()=> handleSort("email")} scope="col">
             Email
           </th>
           <th style={{ cursor: "pointer" }} onClick={()=> handleSort("location")} scope="col">
