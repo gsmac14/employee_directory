@@ -15,7 +15,7 @@
   This project was created for users to be able to view entire employee directory at once so that he or she can have quick access to their information.
       
   ![Alt text](/images/employee-directory.png)
-
+   https://gsmac14.github.io/employee_directory/
   ## Technologies
   React API's, axios
 
